@@ -42,4 +42,4 @@ app.listen(
       .underline.bold
   )
 );
-// console.log();
+console.log('hi');
