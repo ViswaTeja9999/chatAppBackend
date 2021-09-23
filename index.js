@@ -33,7 +33,7 @@ io.on("connection", (socket) => {
   });
 })
 
-app.get("/", (req, res) => res.status(200).send("Api is running..."));
+app.get("/", (req, res) => res.status(200).send("Api is Running..."));
 const PORT = process.env.PORT || 5000;
 app.listen(
   PORT,
