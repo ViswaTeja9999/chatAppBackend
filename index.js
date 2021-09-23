@@ -5,6 +5,7 @@ import path from "path";
 import colors from "colors";
 import cors from "cors";
 import connectdb from "./config/db.js";
+import UploadRoutes from "./routes/uploadRoutes.js";
 import UserRoutes from "./routes/userRoutes.js";
 import http from "http";
 const server = http.createServer();
@@ -22,6 +23,7 @@ if (process.env.NODE_ENV === "development") {
   }
 app.use(express.json());
 app.use("/api/users", UserRoutes);
+app.use("/api/uploads", UploadRoutes);
 io.on("connection", (socket) => {
   socket.on("private message", ({ content, to }) => {
     socket.to(to).emit("private message", {
